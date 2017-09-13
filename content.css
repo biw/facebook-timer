@@ -70,7 +70,7 @@ table {
 
 .container {
   background: #fff;
-  width: 450px;
+  width: 490px;
   display: block;
   border-radius: 5px;
   margin: 20vh auto;
@@ -82,6 +82,15 @@ table {
   font-size: 20px;
   line-height: 40px;
   margin: 0 0 20px 0;
+}
+
+.fbbr__overlay .title__times_up {
+  font-size: 40px;
+  color: #da5252;
+}
+
+.fbbr__overlay #timesUp p {
+  font-size: 14px;
 }
 
 .button_selection {
@@ -98,7 +107,7 @@ table {
 
 .button_selection__one {
   background: #42b342;
-  width: 140px;
+  width: 170px;
 }
 .button_selection__one:hover {
   background: #4fd04f;
@@ -106,19 +115,21 @@ table {
 
 .button_selection__two {
   background: #dab83a;
-  width: 80px;
+  width: 90px;
 }
 .button_selection__two:hover {
   background: #f7d144;
 }
 .button_selection__five {
   background: #b94545;
+  width: 60px;
 }
 .button_selection__five:hover {
   background: #da5252;
 }
 .button_selection__infinity{
   background: #792d2d;
+  margin: 0;
 }
 .button_selection__infinity:hover {
   background: #9e3d3d;
@@ -158,7 +169,7 @@ table {
   padding: 10px;
   background: #444;
   border-radius: 5px;
-  opacity: 1;
+  opacity: 0;
 
 }
 .boo_hover_image {
