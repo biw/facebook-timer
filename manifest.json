@@ -1,18 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "Facebook Block Reminder",
-  "description": "Blocks you everytime that you load up Facebook, then ask you how long you want to go on Facebook for",
+  "name": "Facebook Timer",
+  "description": "Extention that ask \"How long do you want to be on Facebook for?\"",
   "version": "1.0.0",
-  "homepage_url": "https://github.com/719Ben/facebook-block-reminder",
-  "icons": {
-    //"16": "icons/16.png",
-    //"48": "icons/48.png",
-    //"128": "icons/128.png"
-  },
+  "homepage_url": "https://github.com/719Ben/facebook-timer",
   "browser_action": {
-    //"default_icon": "icons/16.png",
-    "default_title": "Configure Facebook",
-    "default_popup": "popup.html"
+    "default_title": "Facebook Timer"
   },
   "permissions": [
     "storage",

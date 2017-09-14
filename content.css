@@ -1,67 +1,10 @@
-/* div[role=feed] {
-  background: #000 !important;
-}
-
-.fbUserPost div[role=feed] h5 span.fwb {
-  background: green !important;
-}
- */
-
- /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-/*
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-} */
-
 
 .fbbr__overlay {
   width: 100%;
   height: 100%;
   display: block;
   position: fixed;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   z-index: 10000;
   top: 0;
   left: 0;
@@ -70,7 +13,7 @@ table {
 
 .container {
   background: #fff;
-  width: 490px;
+  width: 525px;
   display: block;
   border-radius: 5px;
   margin: 20vh auto;
@@ -107,7 +50,7 @@ table {
 
 .button_selection__one {
   background: #42b342;
-  width: 170px;
+  width: 187px;
 }
 .button_selection__one:hover {
   background: #4fd04f;
@@ -115,14 +58,14 @@ table {
 
 .button_selection__two {
   background: #dab83a;
-  width: 90px;
+  width: 100px;
 }
 .button_selection__two:hover {
   background: #f7d144;
 }
 .button_selection__five {
   background: #b94545;
-  width: 60px;
+  width: 70px;
 }
 .button_selection__five:hover {
   background: #da5252;
@@ -212,4 +155,41 @@ table {
   animation-name: ease_down_picture;
   animation-duration: 0.2s;
   opacity: 0;
+}
+
+#facebook ._-kb div .fbbr_timer {
+  font-family: Menlo, Consolas, Monaco, monospace;
+  line-height: 100%;
+  display: block;
+  margin: auto 0px auto 10px;
+  background: rgba(0,0,0,0.5);
+  padding: 4px;
+  border-radius: 5px;
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(0,0,0,0.2);
+  width: 29px;
+  overflow: hidden;
+  transition-property: width;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.ffbr_timer_infinity {
+    font-size: 28px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    line-height: 0;
+    display: initial;
+}
+
+#facebook ._-kb div .fbbr_timer:hover {
+    background: rgba(0, 0, 0, 0.65);
+    cursor: pointer;
+    width: 94px;
+}
+
+.fbbr_setting {
+  padding: 0 0 0 16px;
+  font-size: 11px;
 }

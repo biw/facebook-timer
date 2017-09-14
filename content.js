@@ -1,4 +1,3 @@
-'use strict'
 
 const createOverlay = (timesUp = false) => {
   let overlay = document.createElement('div')
@@ -43,16 +42,10 @@ const deleteOverlay = () => {
 
 const setTimer = (time) => {
   let miliTime = parseInt(time) * 1000 * 60
-
   if (isNaN(miliTime) === true) {
-    return
+    miliTime = 'Infinity'
   }
-
   window.chrome.runtime.sendMessage({type: 'timeSetter', maxTime: miliTime})
-
-  setTimeout(() => {
-    initFBBlock(true)
-  }, miliTime)
 }
 
 const initFBBlock = (timesUp = false) => {
@@ -70,7 +63,6 @@ const initFBBlock = (timesUp = false) => {
   for (let button of buttonList) {
     button.onclick = () => {
       let timeLimit = button.getAttribute('timeLimit')
-      deleteOverlay()
       window.chrome.runtime.sendMessage({type: 'timeReset'})
       setTimer(timeLimit)
     }
@@ -82,13 +74,41 @@ setInterval(() => {
   window.chrome.runtime.sendMessage({type: 'timeUpdate', id})
 }, 1000)
 
-window.chrome.runtime.onMessage.addListener(
-  (request, sender, sendResponse) => {
-    console.log(request)
-    if (request.status === 'off') {
-      deleteOverlay()
-    } else if (request.status === 'on') {
-      initFBBlock(true)
-    }
+window.chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.status === 'on') {
+    initFBBlock(true)
+  } else if (request.status === 'off') {
+    deleteOverlay()
+  } else if (request.status === 'timeUpdate') {
+    editTimerTime(request.time)
   }
-)
+})
+
+window.chrome.storage.local.get('status', (item) => {
+  if (item.status === 'on' || item.status === undefined) {
+    initFBBlock()
+  }
+})
+
+const createTimer = () => {
+  let navBar = document.querySelectorAll('[role="navigation"]')[0]
+
+  let timerHTML = '<div class="fbbr_timer" id="fbbr_timer"><span class="fbbr_time" id="fbbr_time">0:00</span><span class="fbbr_setting">settings</span></div>'
+
+  navBar.innerHTML = timerHTML + navBar.innerHTML
+
+  document.getElementById('fbbr_timer').onclick = () => {
+    initFBBlock()
+  }
+}
+createTimer()
+
+const editTimerTime = (newTime) => {
+  let timer = document.getElementById('fbbr_time')
+
+  if (newTime === 'Infinity') {
+    newTime = '<div class="ffbr_timer_infinity">&#8734;</div>'
+  }
+
+  timer.innerHTML = newTime
+}
